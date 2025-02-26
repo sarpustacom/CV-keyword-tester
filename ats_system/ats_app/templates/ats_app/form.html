@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+<form action="{% url 'check' %}" method="post" enctype="multipart/form-data">
+  {% csrf_token %}
+    <div class="mb-3">
+        <label for="keyword_form" class="form-label">Keywords (please write by queue using ',') </label>
+        <textarea class="form-control" id="keyword_form" rows="3" name="keywords_text_area"></textarea>
+      </div>
+
+      <div class="mb-3">
+        <label for="file-form" class="form-label">Upload PDF</label>
+        <input class="form-control" type="file" id="file-form" name="upload_file">
+      </div>
+
+      <button type="submit">Check Tracking</button>
+</form>
+{% endblock %}
